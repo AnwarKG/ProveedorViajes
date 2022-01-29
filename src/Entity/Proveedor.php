@@ -22,13 +22,13 @@ class Proveedor
     #[ORM\Column(type: 'integer')]
     private $telefono;
 
-    #[ORM\Column(type: 'string', length: 255)]
+    #[ORM\Column(type: 'string', length: 255,)]
     private $tipo;
 
     #[ORM\Column(type: 'string', length: 255)]
     private $activo;
 
-    #[ORM\Column(type: 'datetime')]
+    #[ORM\Column(type: 'datetime', nullable: true)]
     private $fecha;
 
     public function getId(): ?int
