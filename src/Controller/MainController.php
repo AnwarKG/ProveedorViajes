@@ -27,9 +27,9 @@ class MainController extends AbstractController
         $form = $this->createForm(ProveedorType::class, $proveedor);
         $form->handleRequest($request);
         if($form->isSubmitted() && $form->isValid()){
-            $data = $doctrine->getManager();
-            $data->persist($proveedor);
-            $data->flush();
+            $em = $doctrine->getManager();
+            $em->persist($proveedor);
+            $em->flush();
 
             $this->addFlash('notice','Añadido correctamente');
 
@@ -58,17 +58,6 @@ class MainController extends AbstractController
         return $this->render('main/update.html.twig', ['form' => $form->createView()]);
     }
     
-    #[Route('/delete/{id}', name: 'delete')]
-    public function delete(ManagerRegistry $doctrine, int $id){
-
-        $data = $doctrine->getRepository(Proveedor::class)->find($id);
-        $em = $doctrine->getManager();
-        $em->remove($data);
-        $em->flush();
-
-        $this->addFlash('notice','Eliminado correctamente');
-        return $this->redirectToRoute('main');
-    }
 
 
 }
