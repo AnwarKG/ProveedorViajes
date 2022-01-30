@@ -1,8 +1,5 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Lista de proveedores
-{% endblock %}
-
 {% block body %}
 	<div class="container">
 		{% for message in app.flashes('notice') %}
@@ -11,10 +8,11 @@
 				{{message}}
 			</div>
 		{% endfor %}
+		<h3 class="mt-5 mb-5">Lista de Proveedores</h3>
 		<table class="table">
-			<thead>
+			<thead class="table-dark">
 				<tr>
-					<th scope="col">#</th>
+					<th scope="col">ID</th>
 					<th scope="col">Nombre</th>
 					<th scope="col">Email</th>
 					<th scope="col">Teléfono</th>
@@ -33,13 +31,19 @@
 						<td>{{data.tipo}}</td>
 						<td>{{data.activo}}</td>
 						<td>
-							<a class="btn btn-warning" href="{{ path('update', {'id': data.id} )}}">Editar</a>
-							<a class="btn btn-danger" href="{{ path('delete', {'id': data.id} )}}">Eliminar</a>
+							<a class="btn btn-warning" href="{{ path('update', {'id': data.id} )}}">
+								<i class="bi bi-pencil"></i>
+							</a>
+							<a class="btn btn-danger" href="{{ path('delete', {'id': data.id} )}}">
+								<i class="bi bi-trash"></i>
+							</a>
 
 						</td>
 					</tr>
 				{% endfor %}
 			</tbody>
 		</table>
-	</div>
-{% endblock %}
+		<a class="btn btn-primary mt-2 text-white col-md-2"  href="{{ path('create')}}">
+			Añadir Proveedor</i>
+	    </a>
+</div>{% endblock %}

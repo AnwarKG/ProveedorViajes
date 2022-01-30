@@ -5,34 +5,35 @@
 	<div class="container">
 		<div class="row">
 			<h3 class="mt-5 mb-5">Editar Proveedor</h3>
-			    <div class="col-md-6 offset-md-3">
-				    {{ form_start(form) }}
-                        <div class="form-group">
-				            {{ form_label(form.nombre) }}
-                            {{ form_widget(form.nombre,{'attr':{'class':'form-control'}})}}
-                        </div>
-                        <div class="form-group">
-				            {{ form_label(form.email) }}
-                            {{ form_widget(form.email,{'attr':{'class':'form-control'}})}}
-                        </div>
-                        <div class="form-group">
-				            {{ form_label(form.telefono) }}
-                            {{ form_widget(form.telefono,{'attr':{'class':'form-control'}})}}
-                        </div>
-                        <div class="form-group">
-				            {{ form_label(form.activo) }}
-                            {{ form_widget(form.activo,{'attr':{'class':'form-control'}})}}
-                        </div>
-                        <div class="form-group">
-				            {{ form_label(form.tipo) }}
-                            {{ form_widget(form.tipo,{'attr':{'class':'form-control'}})}}
-                        </div>
-                        <div class="form-group">
-				            <button class="btn btn-info mt-2 text-white">Actualizar</button>
-                        </div>
-				    {{ form_end(form) }}
+			<div class="col-md-6 offset-md-3">
+				{{ form_start(form) }}
+				<div class="form-group">
+					{{ form_label(form.nombre) }}
+					{{ form_widget(form.nombre,{'attr':{'class':'form-control'}})}}
 				</div>
+				<div class="form-group">
+					{{ form_label(form.email) }}
+					{{ form_widget(form.email,{'attr':{'class':'form-control'}})}}
+				</div>
+				<div class="form-group">
+					{{ form_label(form.telefono) }}
+					{{ form_widget(form.telefono,{'attr':{'class':'form-control'}})}}
+				</div>
+				<div class="form-group">
+					{{ form_label(form.activo) }}
+					{{ form_widget(form.activo,{'attr':{'class':'form-control'}})}}
+				</div>
+				<div class="form-group">
+					{{ form_label(form.tipo) }}
+					{{ form_widget(form.tipo,{'attr':{'class':'form-control'}})}}
+				</div>
+				<div class="form-group">
+					<button class="btn btn-info mt-2 text-white">Actualizar</button>
+					<a class="btn btn-danger mt-2 text-white col-md-2" href="{{ path('main')}}">
+						Cancelar</i>
+				</a>
+			</div>
+			{{ form_end(form) }}
 		</div>
 	</div>
-
-	{% endblock %}
+</div>{% endblock %}
