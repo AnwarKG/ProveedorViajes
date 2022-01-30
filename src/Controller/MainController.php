@@ -31,6 +31,8 @@ class MainController extends AbstractController
             $em->flush();
 
             $this->addFlash('notice','Añadido correctamente');
+
+            return $this->redirectToRoute('main');
         }
 
         return $this->render('main/create.html.twig', ['form' => $form->createView()]);
