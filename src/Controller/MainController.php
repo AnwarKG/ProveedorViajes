@@ -38,6 +38,7 @@ class MainController extends AbstractController
 
             return $this->redirectToRoute('main');
         }
+        
 
         return $this->render('main/create.html.twig', ['form' => $form->createView()]);
     }
@@ -75,5 +76,9 @@ class MainController extends AbstractController
         return $this->redirectToRoute('main');
     }
 
-
+    public function __construct()
+    {
+    $this->created_at = new \DateTime();
+    $this->updated_at = new \DateTime();
+    }
 }
