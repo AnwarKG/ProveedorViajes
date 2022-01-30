@@ -10,8 +10,10 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
+
 class MainController extends AbstractController
 {
+    /* Función para listar los registros */
     #[Route('/', name: 'main')]
     public function index(ManagerRegistry $doctrine): Response
     {
@@ -21,15 +23,16 @@ class MainController extends AbstractController
         ]);
     }
 
+    /*Función para crear registros */
     #[Route('create', name: 'create')]
     public function create(Request $request, ManagerRegistry $doctrine){
         $proveedor = new Proveedor();
         $form = $this->createForm(ProveedorType::class, $proveedor);
         $form->handleRequest($request);
         if($form->isSubmitted() && $form->isValid()){
-            $data = $doctrine->getManager();
-            $data->persist($proveedor);
-            $data->flush();
+            $em = $doctrine->getManager();
+            $em->persist($proveedor);
+            $em->flush();
 
             $this->addFlash('notice','Añadido correctamente');
 
@@ -39,6 +42,7 @@ class MainController extends AbstractController
         return $this->render('main/create.html.twig', ['form' => $form->createView()]);
     }
 
+    /* Función para actualizar registros */
     #[Route('/update/{id}', name: 'update')]
     public function update(Request $request, ManagerRegistry $doctrine, int $id){
         
@@ -58,6 +62,7 @@ class MainController extends AbstractController
         return $this->render('main/update.html.twig', ['form' => $form->createView()]);
     }
     
+    /* Función para eliminar registros */
     #[Route('/delete/{id}', name: 'delete')]
     public function delete(ManagerRegistry $doctrine, int $id){
 
