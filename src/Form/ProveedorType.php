@@ -17,7 +17,8 @@ class ProveedorType extends AbstractType
             ->add('telefono')
             ->add('tipo')
             ->add('activo')
-            //->add('fecha') Pendiente de comprobar 
+            //->add('creado') Pendiente de comprobar 
+            //->add('actualizado') Pendiente de comprobar
         ;
     }
 

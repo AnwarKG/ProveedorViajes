@@ -29,7 +29,10 @@ class Proveedor
     private $activo;
 
     #[ORM\Column(type: 'datetime', nullable: true)]
-    private $fecha;
+    private $creado;
+
+    #[ORM\Column(type: 'datetime', nullable: true)]
+    private $actualizado;
 
     public function getId(): ?int
     {
