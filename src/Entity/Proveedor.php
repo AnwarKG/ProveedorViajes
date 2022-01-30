@@ -28,8 +28,8 @@ class Proveedor
     #[ORM\Column(type: 'string', length: 255)]
     private $activo;
 
- 
 
+ 
     public function getId(): ?int
     {
         return $this->id;
@@ -94,5 +94,7 @@ class Proveedor
 
         return $this;
     }
+
+   
    
 }

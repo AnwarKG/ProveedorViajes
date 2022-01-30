@@ -3,7 +3,6 @@
 namespace App\Form;
 
 use App\Entity\Proveedor;
-use DateTime;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -17,7 +16,8 @@ class ProveedorType extends AbstractType
             ->add('email')
             ->add('telefono')
             ->add('tipo')
-            ->add('activo')           
+            ->add('activo')   
+            //->add('createdAt')       
         ;
     }
 
