@@ -39,5 +39,25 @@ class MainController extends AbstractController
         return $this->render('main/create.html.twig', ['form' => $form->createView()]);
     }
 
+    #[Route('/update/{id}', name: 'update')]
+    public function update(Request $request, ManagerRegistry $doctrine, int $id){
+        
+        $proveedor = $doctrine->getRepository(Proveedor::class)->find($id);
+        $form = $this->createForm(ProveedorType::class, $proveedor);
+        $form->handleRequest($request);
+        if($form->isSubmitted() && $form->isValid()){
+            $em = $doctrine->getManager();
+            $em->persist($proveedor);
+            $em->flush();
+
+            $this->addFlash('notice','Actualizado correctamente');
+
+            return $this->redirectToRoute('main');
+        }
+
+        return $this->render('main/update.html.twig', ['form' => $form->createView()]);
+    }
+    
+
 
 }

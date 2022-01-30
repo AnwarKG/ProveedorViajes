@@ -25,6 +25,11 @@
       <td>{{data.telefono}}</td>
       <td>{{data.tipo}}</td>
       <td>{{data.activo}}</td>
+      <td>
+        <a class="btn btn-warning" href="{{ path('update', {'id': data.id} )}}">Editar</a>
+        <a class="btn btn-danger" href="{{ path('delete', {'id': data.id} )}}">Eliminar</a>
+      
+      </td>
     </tr>
     {% endfor %}
   </tbody>
