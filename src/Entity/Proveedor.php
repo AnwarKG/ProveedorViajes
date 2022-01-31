@@ -33,7 +33,9 @@ class Proveedor
     #[ORM\Column(type: 'datetime')]
     private $CreatedAt;
 
-    
+    #[ORM\Column(type: 'datetime', nullable: true)]
+    private $UpdatedAt;
+
 
     public function getId(): ?int
     {
@@ -117,6 +119,25 @@ class Proveedor
         {
             $this->CreatedAt = new \DateTime();
        }
+
+    public function getUpdatedAt(): ?\DateTimeInterface
+    {
+        return $this->UpdatedAt;
+    }
+
+    public function setUpdatedAt(?\DateTimeInterface $UpdatedAt): self
+    {
+        $this->UpdatedAt = $UpdatedAt;
+
+        return $this;
+    }
+
+    #[ORM\PreUpdate]
+    public function onPreUpdate()
+    {
+        $this->UpdatedAt = new \DateTime();
+    }
+
    
 }
 
