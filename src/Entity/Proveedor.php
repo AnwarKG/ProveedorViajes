@@ -6,6 +6,8 @@ use App\Repository\ProveedorRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: ProveedorRepository::class)]
+#[ORM\HasLifecycleCallbacks()]
+
 class Proveedor
 {
     #[ORM\Id]
@@ -28,8 +30,11 @@ class Proveedor
     #[ORM\Column(type: 'string', length: 255)]
     private $activo;
 
+    #[ORM\Column(type: 'datetime')]
+    private $CreatedAt;
 
- 
+    
+
     public function getId(): ?int
     {
         return $this->id;
@@ -95,6 +100,24 @@ class Proveedor
         return $this;
     }
 
-   
+    public function getCreatedAt(): ?\DateTimeInterface
+    {
+        return $this->CreatedAt;
+    }
+
+    public function setCreatedAt(\DateTimeInterface $CreatedAt): self
+    {
+        $this->CreatedAt = $CreatedAt;
+
+        return $this;
+    }
+
+    #[ORM\PrePersist]
+    public function setCreatedAtValue()
+        {
+            $this->CreatedAt = new \DateTime();
+       }
    
 }
+
+
