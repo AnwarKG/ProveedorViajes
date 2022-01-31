@@ -3,7 +3,7 @@
 {% block body %}
 	<div class="container">
 		{% for message in app.flashes('notice') %}
-			<div class="alert alert-success w-25 mt-4 mb-b"role="alert">
+			<div class="alert alert-success w-25 mt-4 mb-b" role="alert">
 				<strong>{{message}}</strong>
 			</div>
 		{% endfor %}
@@ -16,7 +16,7 @@
 					<th scope="col">Email</th>
 					<th scope="col">Teléfono</th>
 					<th scope="col">Tipo</th>
-					<th scope="col">Activo</th>					
+					<th scope="col">Activo</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -32,7 +32,7 @@
 							<a class="btn btn-warning " href="{{ path('update', {'id': data.id} )}}">
 								<i class="bi bi-pencil"></i>
 							</a>
-							<a class="btn btn-danger rounded-circle" href="{{ path('delete', {'id': data.id} )}}">
+							<a class="btn btn-danger rounded-circle" href="{{ path('delete', {'id': data.id} )}}"onclick="return confirm('Confirmar eliminación')">
 								<i class="bi bi-trash"></i>
 							</a>
 
@@ -45,4 +45,6 @@
 			<strong>Añadir Proveedor</strong>
 		</i>
 	</a>
-</div>{% endblock %}
+</div>
+<script>
+{% endblock %}

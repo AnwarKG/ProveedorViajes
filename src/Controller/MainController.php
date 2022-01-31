@@ -69,7 +69,7 @@ class MainController extends AbstractController
 
         $data = $doctrine->getRepository(Proveedor::class)->find($id);
         $em = $doctrine->getManager();
-        $em->remove($data);
+        $em->remove($data);            
         $em->flush();
 
         $this->addFlash('notice','Eliminado correctamente');
