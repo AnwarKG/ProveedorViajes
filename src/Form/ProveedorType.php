@@ -16,8 +16,7 @@ class ProveedorType extends AbstractType
             ->add('email')
             ->add('telefono')
             ->add('tipo')
-            ->add('activo')   
-                  
+            ->add('activo')                    
         ;
     }
 
