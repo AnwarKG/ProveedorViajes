@@ -114,6 +114,7 @@ class Proveedor
         return $this;
     }
 
+    /* Utilizamos la fecha y hora actuales al añadir un nuevo registro */
     #[ORM\PrePersist]
     public function setCreatedAtValue()
         {
@@ -132,6 +133,7 @@ class Proveedor
         return $this;
     }
 
+    /* Utilizamos la fecha y hora actuales al actualizar un nuevo registro */
     #[ORM\PreUpdate]
     public function onPreUpdate()
     {
