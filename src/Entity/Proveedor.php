@@ -117,9 +117,9 @@ class Proveedor
     /* Utilizamos la fecha y hora actuales al añadir un nuevo registro */
     #[ORM\PrePersist]
     public function setCreatedAtValue()
-        {
-            $this->CreatedAt = new \DateTime();
-       }
+    {
+        $this->CreatedAt = new \DateTime();
+    }
 
     public function getUpdatedAt(): ?\DateTimeInterface
     {
@@ -139,8 +139,4 @@ class Proveedor
     {
         $this->UpdatedAt = new \DateTime();
     }
-
-   
 }
-
-

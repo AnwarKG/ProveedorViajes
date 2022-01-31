@@ -17,14 +17,11 @@ class ProveedorType extends AbstractType
             ->add('nombre', null, ['label' => 'Nombre',])
             ->add('email', EmailType::class)
             ->add('telefono', null, ['label' => 'Teléfono',])
-            ->add('tipo', ChoiceType::class, ['placeholder' => 'Elige una opción' ,'choices'  => ['Hotel' => 'Hotel','Pista' => 'Pista','Complemento' => 'Complemento',],],)
-            ->add('activo', ChoiceType::class, ['choices'  => ['Sí' => 'Sí','No' => 'No',],],)
-            
-                    
-        ;
+            ->add('tipo', ChoiceType::class, ['placeholder' => 'Elige una opción', 'choices'  => ['Hotel' => 'Hotel', 'Pista' => 'Pista', 'Complemento' => 'Complemento',],],)
+            ->add('activo', ChoiceType::class, ['choices'  => ['Sí' => 'Sí', 'No' => 'No',],],);
     }
 
-    
+
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([

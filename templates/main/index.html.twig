@@ -32,7 +32,7 @@
 							<a class="btn btn-warning " href="{{ path('update', {'id': data.id} )}}">
 								<i class="bi bi-pencil"></i>
 							</a>
-							<a class="btn btn-danger rounded-circle" href="{{ path('delete', {'id': data.id} )}}"onclick="return confirm('Confirmar eliminación')">
+							<a class="btn btn-danger rounded-circle" href="{{ path('delete', {'id': data.id} )}}" onclick="return confirm('Confirmar eliminación')">
 								<i class="bi bi-trash"></i>
 							</a>
 
@@ -43,8 +43,6 @@
 		</table>
 		<a class="btn btn-primary mt-2 text-white rounded-pill" href="{{ path('create')}}">
 			<strong>Añadir Proveedor</strong>
-		</i>
-	</a>
-</div>
-<script>
+		</a>
+	</div><script>
 {% endblock %}
