@@ -4,32 +4,32 @@
 
 	<div class="container">
 		<div class="row">
-			<h3 class="mt-5 mb-5">Editar Proveedor</h3>
-			<div class="col-md-6 offset-md-3">
+			<h3 class="mt-5 mb-5">EDITAR PROVEEDOR</h3>
+			<div class="col-sm-6 offset-md-2">
 				{{ form_start(form) }}
-				<div class="form-group">
-					{{ form_label(form.nombre) }}
+				<div class="form-group mb-3">
+					<strong>{{ form_label(form.nombre) }}</strong>
 					{{ form_widget(form.nombre,{'attr':{'class':'form-control'}})}}
 				</div>
-				<div class="form-group">
-					{{ form_label(form.email) }}
+				<div class="form-group mb-3">
+					<strong>{{ form_label(form.email) }}</strong>
 					{{ form_widget(form.email,{'attr':{'class':'form-control'}})}}
 				</div>
-				<div class="form-group">
-					{{ form_label(form.telefono) }}
+				<div class="form-group mb-3">
+					<strong>{{ form_label(form.telefono) }}</strong>
 					{{ form_widget(form.telefono,{'attr':{'class':'form-control'}})}}
 				</div>
-				<div class="form-group">
-					{{ form_label(form.tipo) }}
+				<div class="form-group mb-3">
+					<strong>{{ form_label(form.tipo) }}</strong>
 					{{ form_widget(form.tipo,{'attr':{'class':'form-control'}})}}
 				</div>
-				<div class="form-group">
-					{{ form_label(form.activo) }}
+				<div class="form-group mb-2">
+					<strong>{{ form_label(form.activo) }}</strong>
 					{{ form_widget(form.activo,{'attr':{'class':'form-control'}})}}
 				</div>
 				<div class="form-group">
 					<button class="btn btn-primary mt-3 text-white rounded-pill"><strong>Actualizar</strong></button>
-					<a class="btn btn-danger mt-3 text-white col-md-2 rounded-pill" href="{{ path('main')}}">
+					<a class="btn btn-danger mt-3 text-white rounded-pill" href="{{ path('main')}}">
 					<strong>Cancelar</strong></i>
 				</a>
 			</div>

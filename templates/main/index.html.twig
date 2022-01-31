@@ -5,11 +5,10 @@
 		{% for message in app.flashes('notice') %}
 			<div class="alert alert-success w-25 mt-4 mb-b"role="alert">
 				<strong>{{message}}</strong>
-
 			</div>
 		{% endfor %}
-		<h3 class="mt-5 mb-5">Lista de Proveedores</h3>
-		<table class="table">
+		<h3 class="mt-5 mb-5">LISTA DE PROVEEDORES</h3>
+		<table class="table table-sm">
 			<thead class="table-dark">
 				<tr>
 					<th scope="col">ID</th>
@@ -17,8 +16,7 @@
 					<th scope="col">Email</th>
 					<th scope="col">Teléfono</th>
 					<th scope="col">Tipo</th>
-					<th scope="col">Activo</th>
-					<!--<th scope="col">Fecha Creación</th>-->
+					<th scope="col">Activo</th>					
 				</tr>
 			</thead>
 			<tbody>
@@ -43,7 +41,7 @@
 				{% endfor %}
 			</tbody>
 		</table>
-		<a class="btn btn-primary mt-2 text-white col-md-2 rounded-pill" href="{{ path('create')}}">
+		<a class="btn btn-primary mt-2 text-white rounded-pill" href="{{ path('create')}}">
 			<strong>Añadir Proveedor</strong>
 		</i>
 	</a>
