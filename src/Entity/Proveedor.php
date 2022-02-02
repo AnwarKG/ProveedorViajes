@@ -114,13 +114,6 @@ class Proveedor
         return $this;
     }
 
-    /* Utilizamos la fecha y hora actuales al añadir un nuevo registro */
-    #[ORM\PrePersist]
-    public function setCreatedAtValue()
-    {
-        $this->CreatedAt = new \DateTime();
-    }
-
     public function getUpdatedAt(): ?\DateTimeInterface
     {
         return $this->UpdatedAt;
@@ -133,7 +126,14 @@ class Proveedor
         return $this;
     }
 
-    /* Utilizamos la fecha y hora actuales al actualizar un nuevo registro */
+    /* Utilizamos la fecha y hora actuales al añadir un nuevo registro */
+     #[ORM\PrePersist]
+    public function setCreatedAtValue()
+    {
+        $this->CreatedAt = new \DateTime();
+    }
+
+    /* Utilizamos la fecha y hora actuales al actualizar un registro */
     #[ORM\PreUpdate]
     public function onPreUpdate()
     {
