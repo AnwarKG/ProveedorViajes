@@ -148,8 +148,8 @@ class Proveedor
     /* Validaciones de registros existentes (propiedades) */ 
     public static function loadValidatorMetadata(ClassMetadata $metadata)
     {
-        $metadata->addConstraint(new UniqueEntity(['fields' => 'email',]));
-        $metadata->addConstraint(new UniqueEntity(['fields' => 'nombre',]));
-        $metadata->addConstraint(new UniqueEntity(['fields' => 'telefono',]));        
+        $metadata->addConstraint(new UniqueEntity(['fields' => 'nombre', 'message' => 'Este nombre ya está siendo utilitzado']));
+        $metadata->addConstraint(new UniqueEntity(['fields' => 'telefono', 'message' => 'Este teléfono ya está siendo utilitzado']));
+        $metadata->addConstraint(new UniqueEntity(['fields' => 'email','message' => 'Este email ya está siendo utilitzado']));        
     }
 }

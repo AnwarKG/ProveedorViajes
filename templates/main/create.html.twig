@@ -8,24 +8,19 @@
 			<div class="col-sm-6 offset-md-2">
 				{{ form_start(form) }}
 				<div class="form-group mb-3">
-					<strong>{{ form_label(form.nombre ) }}</strong>
-					{{ form_widget(form.nombre,{'attr':{'class':'form-control'}})}}					
+					<strong>{{ form_row(form.nombre) }}</strong>				
+				</div>
+				<div class="form-group mb-3">				
+					<strong>{{ form_row(form.email) }}</strong>
 				</div>
 				<div class="form-group mb-3">
-					<strong>{{ form_label(form.email) }}</strong>
-					{{ form_widget(form.email,{'attr':{'class':'form-control'}})}}
+					<strong>{{ form_row(form.telefono) }}</strong>
 				</div>
 				<div class="form-group mb-3">
-					<strong>{{ form_label(form.telefono) }}</strong>
-					{{ form_widget(form.telefono,{'attr':{'class':'form-control'}})}}
-				</div>
-				<div class="form-group mb-3">
-					<strong>{{ form_label(form.tipo) }}</strong>
-					{{ form_widget(form.tipo,{'attr':{'class':'form-control'}})}}
+					<strong>{{ form_row(form.tipo) }}</strong>
 				</div>
 				<div class="form-group mb-2">
-					<strong>{{ form_label(form.activo) }}</strong>
-					{{ form_widget(form.activo,{'attr':{'class':'form-control'}})}}
+					<strong>{{ form_row(form.activo) }}</strong>
 				</div>
 				<div class="form-group">
 					<button class="btn btn-primary mt-3 text-white rounded-pill">
