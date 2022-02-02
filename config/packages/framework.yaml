@@ -17,8 +17,15 @@ framework:
     php_errors:
         log: true
 
+    # More clear and user-friendly error messages (enabled)
+    form:
+        legacy_error_messages: false
+
+
 when@test:
     framework:
         test: true
         session:
             storage_factory_id: session.storage.factory.mock_file
+
+            

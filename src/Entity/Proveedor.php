@@ -3,6 +3,9 @@
 namespace App\Entity;
 
 use App\Repository\ProveedorRepository;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Validator\Mapping\ClassMetadata;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: ProveedorRepository::class)]
@@ -37,6 +40,7 @@ class Proveedor
     private $UpdatedAt;
 
 
+    /* Getters and Setters */
     public function getId(): ?int
     {
         return $this->id;
@@ -139,4 +143,20 @@ class Proveedor
     {
         $this->UpdatedAt = new \DateTime();
     }
+
+
+    /* Validaciones de registros existentes */ 
+    public static function loadValidatorMetadata(ClassMetadata $metadata)
+    {
+        $metadata->addConstraint(new UniqueEntity([
+            'fields' => 'email',
+            
+        ]));
+
+        $metadata->addPropertyConstraint('email', new Assert\Email());
+    }
+
+
+
+
 }
