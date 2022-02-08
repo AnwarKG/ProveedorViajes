@@ -6,30 +6,18 @@
 		<div class="row">
 			<h3 class="mt-5 mb-5">AÑADIR PROVEEDOR</h3>
 			<div class="col-sm-6 offset-md-2">
-				{{ form_start(form) }}
-				<div class="form-group mb-3">
-					<strong>{{ form_row(form.nombre) }}</strong>				
-				</div>
-				<div class="form-group mb-3">				
-					<strong>{{ form_row(form.email) }}</strong>
-				</div>
-				<div class="form-group mb-3">
-					<strong>{{ form_row(form.telefono) }}</strong>
-				</div>
-				<div class="form-group mb-3">
-					<strong>{{ form_row(form.tipo) }}</strong>
-				</div>
-				<div class="form-group mb-2">
-					<strong>{{ form_row(form.activo) }}</strong>
-				</div>
-				<div class="form-group">
+				{{ form_start(form) }}				
+					<strong>{{ form_row(form.nombre) }}</strong>																
+					<strong>{{ form_row(form.email) }}</strong>								
+					<strong>{{ form_row(form.telefono) }}</strong>								
+					<strong>{{ form_row(form.tipo) }}</strong>								
+					<strong>{{ form_row(form.activo) }}</strong>								
 					<button class="btn btn-primary mt-3 text-white rounded-pill">
 						<strong>Añadir</strong>
 					</button>
 					<a class="btn btn-danger mt-3 text-white rounded-pill" href="{{ path('main')}}">
 						<strong>Cancelar</strong>
-					</a>
-				</div>
+					</a>				
 				{{ form_end(form) }}
 			</div>
 		</div>
